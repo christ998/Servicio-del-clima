@@ -10,32 +10,17 @@ class MeteorologiaI (Meteorologia.Conexion):
 
      med2 = requests.get("http://api.meteored.cl/index.php?api_lang=cl&localidad=18267&affiliate_id=rieyjeks8666&v=3.0")
 
-     #tu tiempo en XML
-     #med3 = requests.get("https://api.tutiempo.net/xml/?lan=es&apid=zsEqX44qqXqXbua&lid="+codigoCiudad)
-     #med3 = ET.fromstring(med3.text)
-     #print(med3[6][0].text)
-
-
-     #med2 = med2.text
-
-
 
      #Crea el arreglo de objeto Medicion
      medidas = []
 
      for i in range(1,8):
-         #medida.dia = med["day"+str(i)]["date"]
-         #medida.tempMin = med["day"+str(i)]["temperature_min"]
+       
          medidas.append(Meteorologia.MedicionDia(med["day"+str(i)]["date"],med["day"+str(i)]["text"],
                                               str(med["day"+str(i)]["temperature_min"]),str(med["day"+str(i)]["temperature_max"]),
                                               str(med["day"+str(i)]["humidity"]),str(med["day"+str(i)]["wind"]),
                                               med["day"+str(i)]["wind_direction"]))
 
-     #medida.dia=med["day1"]["date"]
-     #medida.tempMin=str(med["day1"]["temperature_min"])
-     #medida.tempMax=str(med["day1"]["temperature_max"])
-
-     
      return medidas
 
   def buscaCodigoCiudad(self,nombreCiudad):
