@@ -25,7 +25,7 @@ class Client (Ice.Application):
         try:
             print("Ingrese nombre ciudad")
             cod = input()
-            medidaHora= holaMundoPrx.reporteSemanalPorHora(cod)
+            medidaHora= holaMundoPrx.reportePorHora(cod)
             for med in medidaHora:
                 print("Dia: " + med.dia)
                 print("Hora: " + med.hora)

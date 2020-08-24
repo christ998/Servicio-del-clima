@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys, traceback, Ice, requests, json
 #Ice.loadSlice(’../slice/holaMundo.ice’, [’-I’ ’/usr/share/slice’])
 import Meteorologia
@@ -7,9 +8,6 @@ class MeteorologiaI (Meteorologia.Conexion):
   def reporteSemanal(self, ciudad, current=None):
 
      med = self.doGet(ciudad)
-
-     med2 = requests.get("http://api.meteored.cl/index.php?api_lang=cl&localidad=18267&affiliate_id=rieyjeks8666&v=3.0")
-
 
      #Crea el arreglo de objeto Medicion
      medidas = []
@@ -37,7 +35,7 @@ class MeteorologiaI (Meteorologia.Conexion):
       med = json.loads(med)
       return med
 
-  def reporteSemanalPorHora(self,ciudad, current=None):
+  def reportePorHora(self,ciudad, current=None):
       med = self.doGet(ciudad)
 
       # Crea el arreglo de objeto MedicionHora

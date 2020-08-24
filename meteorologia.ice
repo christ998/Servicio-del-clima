@@ -23,7 +23,7 @@ module Meteorologia {
     interface Conexion
     {
         Mediciones reporteSemanal(string ciudad);
-	MedicionesHora reporteSemanalPorHora(string ciudad);
+	MedicionesHora reportePorHora(string ciudad);
 
     }
 

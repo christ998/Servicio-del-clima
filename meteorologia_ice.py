@@ -339,17 +339,17 @@ if 'ConexionPrx' not in _M_Meteorologia.__dict__:
         def end_reporteSemanal(self, _r):
             return _M_Meteorologia.Conexion._op_reporteSemanal.end(self, _r)
 
-        def reporteSemanalPorHora(self, ciudad, context=None):
-            return _M_Meteorologia.Conexion._op_reporteSemanalPorHora.invoke(self, ((ciudad, ), context))
+        def reportePorHora(self, ciudad, context=None):
+            return _M_Meteorologia.Conexion._op_reportePorHora.invoke(self, ((ciudad, ), context))
 
-        def reporteSemanalPorHoraAsync(self, ciudad, context=None):
-            return _M_Meteorologia.Conexion._op_reporteSemanalPorHora.invokeAsync(self, ((ciudad, ), context))
+        def reportePorHoraAsync(self, ciudad, context=None):
+            return _M_Meteorologia.Conexion._op_reportePorHora.invokeAsync(self, ((ciudad, ), context))
 
-        def begin_reporteSemanalPorHora(self, ciudad, _response=None, _ex=None, _sent=None, context=None):
-            return _M_Meteorologia.Conexion._op_reporteSemanalPorHora.begin(self, ((ciudad, ), _response, _ex, _sent, context))
+        def begin_reportePorHora(self, ciudad, _response=None, _ex=None, _sent=None, context=None):
+            return _M_Meteorologia.Conexion._op_reportePorHora.begin(self, ((ciudad, ), _response, _ex, _sent, context))
 
-        def end_reporteSemanalPorHora(self, _r):
-            return _M_Meteorologia.Conexion._op_reporteSemanalPorHora.end(self, _r)
+        def end_reportePorHora(self, _r):
+            return _M_Meteorologia.Conexion._op_reportePorHora.end(self, _r)
 
         @staticmethod
         def checkedCast(proxy, facetOrContext=None, context=None):
@@ -383,8 +383,8 @@ if 'ConexionPrx' not in _M_Meteorologia.__dict__:
         def reporteSemanal(self, ciudad, current=None):
             raise NotImplementedError("servant method 'reporteSemanal' not implemented")
 
-        def reporteSemanalPorHora(self, ciudad, current=None):
-            raise NotImplementedError("servant method 'reporteSemanalPorHora' not implemented")
+        def reportePorHora(self, ciudad, current=None):
+            raise NotImplementedError("servant method 'reportePorHora' not implemented")
 
         def __str__(self):
             return IcePy.stringify(self, _M_Meteorologia._t_ConexionDisp)
@@ -395,7 +395,7 @@ if 'ConexionPrx' not in _M_Meteorologia.__dict__:
     Conexion._ice_type = _M_Meteorologia._t_ConexionDisp
 
     Conexion._op_reporteSemanal = IcePy.Operation('reporteSemanal', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), _M_Meteorologia._t_Mediciones, False, 0), ())
-    Conexion._op_reporteSemanalPorHora = IcePy.Operation('reporteSemanalPorHora', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), _M_Meteorologia._t_MedicionesHora, False, 0), ())
+    Conexion._op_reportePorHora = IcePy.Operation('reportePorHora', Ice.OperationMode.Normal, Ice.OperationMode.Normal, False, None, (), (((), IcePy._t_string, False, 0),), (), ((), _M_Meteorologia._t_MedicionesHora, False, 0), ())
 
     _M_Meteorologia.Conexion = Conexion
     del Conexion
