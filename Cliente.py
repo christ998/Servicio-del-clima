@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
 import sys, traceback, Ice
 #Ice.loadSlice(’../slice/holaMundo.ice’, [’-I’ ’/usr/share/slice’])
 import Meteorologia
+
+
 class Client (Ice.Application):
+    ciudad=""
+    consulta=""
+
+    def __init__(self, ciudad, consulta):
+        self.ciudad=ciudad
+        self.consulta=consulta
+
     def run (self, argv):
         self.shutdownOnInterrupt()
         basePrx = self.communicator().stringToProxy('HolaMundo:default -p 10000')
@@ -53,4 +63,4 @@ class Client (Ice.Application):
         except Ice.UnknownException:
             print("Ciudad no encontrada")
 
-Client().main(sys.argv)
+Client(ciudad, consulta).main(sys.argv)

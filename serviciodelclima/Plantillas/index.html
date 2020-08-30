@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Servicio del clima</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div class="container mt-5">
+        <h1>Servicio del clima</h1>
+
+        <form action="/busqueda/" method="get">{% csrf_token %}
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optradio" value="semana">Consultar próximos 7 días
+              </label>
+            </div>
+
+           <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optradio" value="horas">Consultar siguientes 24 hrs
+              </label>
+           </div>
+
+           <input type="text" id="formulario" class="form-control my-2" name="ciudad">
+           <button type="submit" class="btn btn-primary mb-2" id="boton">Buscar</button>
+
+        </form>
+
+
+      <ul id="resultado">
+      </ul>
+
+    </div>
+
+
+
+<script>
+  const ciudades = [
+    {nombre: 'Temuco', id: 19},
+    {nombre: 'Villarrica', id: 7},
+    {nombre: 'Victoria', id: 123},
+    {nombre: 'Santiago', id: 4537},
+    {nombre: 'San Bernardo', id: 7239},
+  ]
+
+  const formulario = document.querySelector('#formulario');
+  const boton = document.querySelector('#boton');
+  const resultado = document.querySelector('#resultado');
+
+  const filtrar = ()=>{
+    resultado.innerHTML = '';
+
+    const texto = formulario.value.toLowerCase();
+
+    for(let ciudad of ciudades){
+      let nombre = ciudad.nombre.toLowerCase();
+      if(nombre.indexOf(texto) !== -1){
+        resultado.innerHTML += `
+        <li>${ciudad.nombre}</li>
+        `
+      }
+    }
+    if(resultado.innerHTML == ''){
+      resultado.innerHTML += `
+        Ciudad no disponible
+        `
+    }
+  }
+
+  filtrar();
+  formulario.addEventListener('keyup', filtrar);
+
+
+
+  //button.addEventListener('click', )
+
+
+</script>
+
+  </body>
+</html>

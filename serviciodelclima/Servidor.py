@@ -23,7 +23,7 @@ class MeteorologiaI (Meteorologia.Conexion):
 
   def buscaCodigoCiudad(self,nombreCiudad):
       nombreCiudad=nombreCiudad.title()
-      tree = ET.parse('list-CL.xml')
+      tree = ET.parse('Servidor/list-CL.xml')
       print(tree.getroot())
       codigo=tree.find("loc[name='"+nombreCiudad+"']").find("id").text
       return codigo
