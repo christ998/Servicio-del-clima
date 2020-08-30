@@ -20,24 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee63ab46-0f5f-4b87-9969-9c6e8f2d64ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plantillas/informe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cliente/Cliente.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Meteorologia/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servidor/Servidor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servidor/list-CL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meteorologia.ice" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../meteorologia_ice.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plantillas/primeraPlantilla.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviciodelclima/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/serviciodelclima/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviciodelclima/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/serviciodelclima/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +100,7 @@
       <updated>1598129172400</updated>
       <workItem from="1598129173411" duration="713000" />
       <workItem from="1598470756529" duration="5311000" />
-      <workItem from="1598811824783" duration="12326000" />
+      <workItem from="1598811824783" duration="16298000" />
     </task>
     <servers />
   </component>
@@ -135,6 +120,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="365" y="373" width="1180" height="286" key="#SQL_Dialects" timestamp="1598828251534">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="365" y="373" width="1180" height="286" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1598828251534" />
     <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1598823812293">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

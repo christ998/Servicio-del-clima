@@ -3,6 +3,7 @@ import sys, traceback, Ice, requests, json
 #Ice.loadSlice(’../slice/holaMundo.ice’, [’-I’ ’/usr/share/slice’])
 import Meteorologia
 import xml.etree.ElementTree as ET
+import sqlite3
 class MeteorologiaI (Meteorologia.Conexion):
 
   def reporteSemanal(self, ciudad, current=None):
@@ -23,14 +24,22 @@ class MeteorologiaI (Meteorologia.Conexion):
 
   def buscaCodigoCiudad(self,nombreCiudad):
       nombreCiudad=nombreCiudad.title()
-      tree = ET.parse('Servidor/list-CL.xml')
-      print(tree.getroot())
-      codigo=tree.find("loc[name='"+nombreCiudad+"']").find("id").text
-      return codigo
+      con = sqlite3.connect('db.sqlite3')
+      cursorObj = con.cursor()
+      #tree = ET.parse('Servidor/list-CL.xml')
+      #print(tree.getroot())
+      #codigo=tree.find("loc[name='"+nombreCiudad+"']").find("id").text
+
+      cursorObj.execute("SELECT ident from modelo_ciudades where ciudad='"+str(nombreCiudad)+"'")
+      rows = cursorObj.fetchall()
+      print(rows[0][0])
+      print(type(rows[0][0]))
+
+      return str(rows[0][0])
 
   def doGet(self, ciudad):
       med = requests.get(
-          "https://api.tutiempo.net/json/?lan=es&apid=zsEqX44qqXqXbua&lid=" + self.buscaCodigoCiudad(ciudad))
+          "https://api.tutiempo.net/json/?lan=es&apid=zsEqX44qqXqXbua&lid=" + str(self.buscaCodigoCiudad(ciudad)))
       med = med.text
       med = json.loads(med)
       return med

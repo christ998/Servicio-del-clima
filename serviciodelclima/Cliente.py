@@ -51,7 +51,7 @@ class Client (Ice.Application):
             print("Ciudad: "+self.ciudad)
 
             medida = holaMundoPrx.reporteSemanal(self.ciudad)
-            
+
             for med in medida:
                 print("Dia: " + med.dia)
                 print("Text: " + med.text)
