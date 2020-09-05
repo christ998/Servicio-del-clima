@@ -7,6 +7,7 @@ import Meteorologia
 class Client (Ice.Application):
     ciudad=""
     consulta=""
+    medida=[]
 
     def __init__(self, ciudad, consulta):
         self.ciudad=ciudad
@@ -60,7 +61,14 @@ class Client (Ice.Application):
                 print("Viento:" + med.viento + "km/h " + med.vientoDireccion)
                 print("Humedad:" + med.humedad + "%")
                 print("-------------------")
-            return medida
+            print(type(medida))
+
+            self.setMedida(medida)
+
+    def setMedida(self, medida):
+        self.medida = medida
+    def retornaMedida(self):
+        return self.medida
 
 
 #Client(ciudad, consulta).main(sys.argv)

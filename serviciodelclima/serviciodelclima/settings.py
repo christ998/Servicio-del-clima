@@ -55,7 +55,7 @@ ROOT_URLCONF = 'serviciodelclima.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/christian/Escritorio/Servicio-del-clima/serviciodelclima/Plantillas'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

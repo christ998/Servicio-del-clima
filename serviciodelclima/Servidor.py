@@ -37,6 +37,7 @@ class MeteorologiaI (Meteorologia.Conexion):
 
       return str(rows[0][0])
 
+  #Realiza la conexión a la API y devuelve un json con el reporte de la ciudad
   def doGet(self, ciudad):
       med = requests.get(
           "https://api.tutiempo.net/json/?lan=es&apid=zsEqX44qqXqXbua&lid=" + str(self.buscaCodigoCiudad(ciudad)))
