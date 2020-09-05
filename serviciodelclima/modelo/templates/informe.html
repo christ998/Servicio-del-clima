@@ -26,11 +26,35 @@
         {% for day in miLista %}
         <tr>
             <th>{{ day.dia }}</th>
-            <th>{{ day.text }}</th>
+            <th>{{ day.text }}
+                {% if "Cubierto" in day.text and "lluvias" in day.text %}
+                    <img src="https://v5i.tutiempo.net/wi/01/50/19.png">
+                    {% elif "Cubierto" in day.text %}
+                <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+                {% endif %}
+            </th>
             <th>{{ day.tempMin }} °C</th>
             <th>{{ day.tempMax }} °C</th>
             <th>{{ day.humedad }} %</th>
-            <th>{{ day.viento }} kt</th>
+            <th>{{ day.viento }} {{ day.vientoDireccion }} kt
+                {% if "Nordeste" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/SW.png">
+                {% elif "Sureste" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/NW.png">
+                {% elif "Noroeste" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/SE.png">
+                {% elif "Oeste" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/E.png">
+                {% elif "Este" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/E.png">
+                {% elif "Suroeste" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/ENE.png">
+                {% elif "Norte" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/S.png">
+                {% elif "Sur" in day.vientoDireccion %}
+                <img src="https://v5i.tutiempo.net/wd/N.png">
+                {% endif %}
+            </th>
         </tr>
         {% endfor %}
 
