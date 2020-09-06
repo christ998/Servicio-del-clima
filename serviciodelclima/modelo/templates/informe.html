@@ -31,6 +31,8 @@
                     <img src="https://v5i.tutiempo.net/wi/01/50/19.png">
                     {% elif "Cubierto" in day.text %}
                 <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+                    {% elif "Despejado" in day.text %}
+                    <img src="https://v5i.tutiempo.net/wi/01/50/1.png">
                 {% endif %}
             </th>
             <th>{{ day.tempMin }} °C</th>

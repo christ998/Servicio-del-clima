@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Servicio del clima</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
     crossorigin="anonymous">
   </head>
   
   <body>
+
     <div class="container mt-5">
         <h1>Servicio del clima</h1>
 
@@ -28,7 +32,7 @@
            </div>
 
            <input type="text" id="formulario" class="form-control my-2" name="ciudad">
-           <button type="submit" class="btn btn-primary mb-2" id="boton">Buscar</button>
+           <button type="submit" class="btn btn-primary mb-2" id="boton" onclick="conexion()">Buscar</button>
 
         </form>
 
@@ -40,48 +44,51 @@
 
 
 
-<script>
-  const ciudades = [
-    {nombre: 'Temuco', id: 19},
-    {nombre: 'Villarrica', id: 7},
-    {nombre: 'Victoria', id: 123},
-    {nombre: 'Santiago', id: 4537},
-    {nombre: 'San Bernardo', id: 7239},
-  ]
+<script type="text/javascript">
 
-  const formulario = document.querySelector('#formulario');
-  const boton = document.querySelector('#boton');
-  const resultado = document.querySelector('#resultado');
-
-  const filtrar = ()=>{
-    resultado.innerHTML = '';
-
-    const texto = formulario.value.toLowerCase();
-
-    for(let ciudad of ciudades){
-      let nombre = ciudad.nombre.toLowerCase();
-      if(nombre.indexOf(texto) !== -1){
-        resultado.innerHTML += `
-        <li>${ciudad.nombre}</li>
-        `
+    function conec(){
+      /*var json
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET','fo.php')
+      xhr.onload = function (){
+          if (xhr.status == 200){
+             json = JSON.parse(xhr.responseText)
+             console.log(json)
+          }else {
+              console.log("Error "+xhr.status)
+          }
       }
-    }
-    if(resultado.innerHTML == ''){
-      resultado.innerHTML += `
-        Ciudad no disponible
-        `
-    }
+      xhr.send()
+      return json */
+
   }
 
-  filtrar();
-  formulario.addEventListener('keyup', filtrar);
 
 
+  $(function() {
+      var ciudades = <?php echo $res; ?>
+      var src = []
+      for(var i=0; i < ciudades.length;i++){
+        src.push(ciudades[i])
+      }
+      $("#formulario").autocomplete({
+         source: src,
+         minLength: 1
+      });
+  });
 
-  //button.addEventListener('click', )
 
 
 </script>
 
   </body>
+
+    <?php
+    $bd = new SQLite3('db.sqlite3');
+
+    $res = $bd -> query("SELECT ciudad from modelo_ciudades");
+    $res = $res -> fetchArray();
+    $res = json_encode($res);
+    echo $res;
+    ?>
 </html>

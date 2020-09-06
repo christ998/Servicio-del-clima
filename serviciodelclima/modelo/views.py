@@ -4,7 +4,7 @@ import Cliente, sys
 # Create your views here.
 
 def home(request):
-    return render(request,"index.html")
+    return render(request, "index.html")
 
 def form(request):
     ciudad = request.GET["ciudad"]
