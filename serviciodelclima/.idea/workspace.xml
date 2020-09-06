@@ -26,6 +26,7 @@
       <change beforePath="$PROJECT_DIR$/modelo/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo/templates/informe.html" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/templates/informe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +117,7 @@
       <workItem from="1598811824783" duration="18932000" />
       <workItem from="1598897777791" duration="3662000" />
       <workItem from="1599253568375" duration="16495000" />
-      <workItem from="1599324990115" duration="22045000" />
+      <workItem from="1599324990115" duration="22402000" />
     </task>
     <servers />
   </component>
