@@ -11,8 +11,7 @@ def home(request):
     nombres = []
     for name in ciudades:
         nombres.append(name['ciudad'])
-    print(json.dumps(nombres))
-    print(type(nombres))
+
     return render(request, "index.html",{'nombres':json.dumps(nombres)})
 
 def form(request):

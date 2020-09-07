@@ -18,22 +18,22 @@
        <div class="col-4">
          <div class="justify-content-center">
             {% if "lluvias" in datos.text and datos.hora in noche %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/33n.png">{% endif %}
-            {% if "Cubierto" in datos.text and "lluvias" in datos.text %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/19.png">{% endif %}
-            {% if "Cubierto" in datos.text %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">{% endif %}
-            {% if "Despejado" in datos.text and datos.hora in noche %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/1n.png">{% endif %}
-            {% if "Parcialmente nuboso" in datos.text and datos.hora in noche %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/2n.png">{% endif %}
-            {% if "Despejado" in datos.text and datos.hora not in noche %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/1.png">{% endif %}
-            {% if "Muy nuboso" in datos.text %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">{% endif %}
-            {% if "Parcialmente nuboso" in datos.text and datos.hora not in noche %}
-            <img src="https://v5i.tutiempo.net/wi/01/50/4.png"/>{% endif %}
-            {% if "Nubes dispersas" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/33n.png">
+            {% elif "Parcialmente nuboso" in datos.text and datos.hora in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/2n.png">
+            {% elif "Despejado" in datos.text and datos.hora in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/1n.png">
+            {% elif "Cubierto" in datos.text and "lluvias" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/19.png">
+            {% elif "Cubierto" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+            {% elif "Despejado" in datos.text and datos.hora %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/1.png">
+            {% elif "Muy nuboso" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+            {% elif "Parcialmente nuboso" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/4.png"/>
+            {% elif "Nubes dispersas" in datos.text %}
             <img src="https://v5i.tutiempo.net/wi/01/50/9n.png"/>
             {% endif %}
             <p>{{ datos.hora }}</p>
