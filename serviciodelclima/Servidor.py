@@ -63,7 +63,7 @@ class MeteorologiaI (Meteorologia.Conexion):
 class Server (Ice.Application):
     def run (self, argv):
         self.shutdownOnInterrupt()
-        adapter = self.communicator().createObjectAdapterWithEndpoints('HolaMundoAdapter', 'default -p 10000')
+        adapter = self.communicator().createObjectAdapterWithEndpoints('HolaMundoAdapter','default -p 10000')
         adapter.add(MeteorologiaI(), Ice.stringToIdentity('HolaMundo'))
         adapter.activate()
         self.communicator().waitForShutdown()

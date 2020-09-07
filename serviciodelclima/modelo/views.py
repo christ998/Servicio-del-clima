@@ -1,10 +1,19 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
-import Cliente, sys
+from modelo.models import Ciudades
+import Cliente, sys, json
 
 # Create your views here.
 
 def home(request):
-    return render(request, "index.html")
+    ciudades = Ciudades.objects.values("ciudad")
+    ciudades = list(ciudades) #Lista con diccionario de ciudad: nombre
+    nombres = []
+    for name in ciudades:
+        nombres.append(name['ciudad'])
+    print(json.dumps(nombres))
+    print(type(nombres))
+    return render(request, "index.html",{'nombres':json.dumps(nombres)})
 
 def form(request):
     ciudad = request.GET["ciudad"]

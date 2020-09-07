@@ -5,3 +5,6 @@ from django.db import models
 class Ciudades(models.Model):
     ciudad = models.CharField(max_length=30, null=False, unique=True)
     ident=models.IntegerField()
+
+    def __str__(self):
+        return self.ciudad
