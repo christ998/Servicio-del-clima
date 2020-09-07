@@ -43,6 +43,7 @@ class Client (Ice.Application):
                 print("Viento:" + med.viento + "km/h " + med.vientoDireccion)
                 print("Humedad:" + med.humedad + "%")
                 print("-------------------")
+            self.medida = medidaHora
             return medidaHora
 
 

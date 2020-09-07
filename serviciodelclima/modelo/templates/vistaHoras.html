@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vista2</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  </head>
+
+<body>
+<h1 style="text-align: center">Reporte para {{ ciudad }} siguientes 24hrs </h1>
+<div class="container">
+
+    <div class="row">
+      {% for datos in miLista %}
+       <div class="col-4">
+         <div class="justify-content-center">
+            {% if "lluvias" in datos.text and datos.hora in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/33n.png">{% endif %}
+            {% if "Cubierto" in datos.text and "lluvias" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/19.png">{% endif %}
+            {% if "Cubierto" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">{% endif %}
+            {% if "Despejado" in datos.text and datos.hora in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/1n.png">{% endif %}
+            {% if "Parcialmente nuboso" in datos.text and datos.hora in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/2n.png">{% endif %}
+            {% if "Despejado" in datos.text and datos.hora not in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/1.png">{% endif %}
+            {% if "Muy nuboso" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/7.png">{% endif %}
+            {% if "Parcialmente nuboso" in datos.text and datos.hora not in noche %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/4.png"/>{% endif %}
+            {% if "Nubes dispersas" in datos.text %}
+            <img src="https://v5i.tutiempo.net/wi/01/50/9n.png"/>
+            {% endif %}
+            <p>{{ datos.hora }}</p>
+         </div>
+         <p><strong>Día: {{ datos.dia }}</strong></p>
+         <p><strong>Temperatura: {{ datos.temp }}°C</strong></p>
+         <p><strong>Estado: {{ datos.text }}</strong></p>
+         <p><strong>Viento: {{ datos.viento }} {{ datos.vientoDirecion }} kt</strong></p>
+         <p><strong>Humedad: {{ datos.humedad }}%</strong></p>
+       </div>
+      {% endfor %}
+    </div>
+
+</div>
+
+
+</body>
+
+
+
+</html>

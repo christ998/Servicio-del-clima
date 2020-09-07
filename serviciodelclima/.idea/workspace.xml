@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee63ab46-0f5f-4b87-9969-9c6e8f2d64ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Servidor/list-CL.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelo/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/templates/informe.html" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/templates/informe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/views.py" afterDir="false" />
     </list>
@@ -117,7 +113,8 @@
       <workItem from="1598811824783" duration="18932000" />
       <workItem from="1598897777791" duration="3662000" />
       <workItem from="1599253568375" duration="16495000" />
-      <workItem from="1599324990115" duration="22402000" />
+      <workItem from="1599324990115" duration="22736000" />
+      <workItem from="1599411197369" duration="14435000" />
     </task>
     <servers />
   </component>

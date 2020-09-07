@@ -30,9 +30,13 @@
                 {% if "Cubierto" in day.text and "lluvias" in day.text %}
                     <img src="https://v5i.tutiempo.net/wi/01/50/19.png">
                     {% elif "Cubierto" in day.text %}
-                <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+                    <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
                     {% elif "Despejado" in day.text %}
                     <img src="https://v5i.tutiempo.net/wi/01/50/1.png">
+                    {% elif "Muy nuboso" in datos.text %}
+                    <img src="https://v5i.tutiempo.net/wi/01/50/7.png">
+                    {% elif "Parcialmente nuboso" in datos.text %}
+                    <img src="https://v5i.tutiempo.net/wi/01/50/4.png"/>
                 {% endif %}
             </th>
             <th>{{ day.tempMin }} °C</th>
