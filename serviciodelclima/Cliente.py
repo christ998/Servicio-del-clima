@@ -15,12 +15,12 @@ class Client (Ice.Application):
 
     def run (self, argv):
         self.shutdownOnInterrupt()
-        basePrx = self.communicator().stringToProxy("HolaMundo:default -p 10000")
+        basePrx = self.communicator().stringToProxy("HolaMundo:default -h 25.96.226.157 -p 10000")
         holaMundoPrx = Meteorologia.ConexionPrx.checkedCast(basePrx)
 
         try:
             if self.consulta == "semana":
-                    self.consultaPorDia(holaMundoPrx)
+                    self.consultaDiasSemana(holaMundoPrx)
             if self.consulta == "horas":
                 self.consultaPorHora(holaMundoPrx)
         except ValueError:
@@ -29,6 +29,7 @@ class Client (Ice.Application):
         self.communicator().shutdown()
         #self.communicator().waitForShutdown()
 
+    #Solicita el reporte para las próximas 24 horas de la ciudad indicada
     def consultaPorHora(self, holaMundoPrx):
             print("Ingrese nombre ciudad")
             print("Ciudad: "+self.ciudad)
@@ -46,8 +47,8 @@ class Client (Ice.Application):
             self.medida = medidaHora
             return medidaHora
 
-
-    def consultaPorDia(self,holaMundoPrx):
+    #Solicita el reporte para los próximos 7 días de la ciudad indicada
+    def consultaDiasSemana(self,holaMundoPrx):
 
             print("Ingrese nombre ciudad")
             print("Ciudad: "+self.ciudad)
@@ -64,10 +65,13 @@ class Client (Ice.Application):
                 print("-------------------")
             print(type(medida))
 
+            #Agrega al arreglo que se pasará al cliente, las medidas de la semana
             self.setMedida(medida)
 
     def setMedida(self, medida):
         self.medida = medida
+
+    #Para pasar a la vista el arreglo con las medidas, es necesario recuperar el array con return
     def retornaMedida(self):
         return self.medida
 

@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 import sqlite3
 class MeteorologiaI (Meteorologia.Conexion):
 
+  #Extrae el reporte semanal de la API de la ciudad
   def reporteSemanal(self, ciudad, current=None):
 
      med = self.doGet(ciudad)
@@ -22,6 +23,7 @@ class MeteorologiaI (Meteorologia.Conexion):
 
      return medidas
 
+   #Busca el código de la ciudad en la base de datos
   def buscaCodigoCiudad(self,nombreCiudad):
       nombreCiudad=nombreCiudad.title()
       con = sqlite3.connect('db.sqlite3')
@@ -45,6 +47,7 @@ class MeteorologiaI (Meteorologia.Conexion):
       med = json.loads(med)
       return med
 
+  #Extrae el reporte de la API para las próximas 24 hrs de la ciudad
   def reportePorHora(self,ciudad, current=None):
       med = self.doGet(ciudad)
 

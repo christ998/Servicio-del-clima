@@ -19,9 +19,12 @@ def form(request):
     consulta = request.GET["optradio"]
     print(ciudad)
     print(consulta)
+
+    #Se crea un cliente ICE
     miCliente = Cliente.Client(ciudad, consulta)
     miCliente.main(sys.argv)
 
+    #Retorna el arreglo para mostrarlo en las vistas
     medidas = miCliente.retornaMedida()
 
     if consulta == 'semana':
