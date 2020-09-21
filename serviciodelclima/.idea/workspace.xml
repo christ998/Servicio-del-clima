@@ -22,6 +22,8 @@
     <list default="true" id="ee63ab46-0f5f-4b87-9969-9c6e8f2d64ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cliente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/sds.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sds.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +116,9 @@
       <workItem from="1599324990115" duration="22736000" />
       <workItem from="1599411197369" duration="25179000" />
       <workItem from="1599499910648" duration="2744000" />
+      <workItem from="1599864859792" duration="1516000" />
+      <workItem from="1600464911763" duration="195000" />
+      <workItem from="1600648843304" duration="1775000" />
     </task>
     <servers />
   </component>
@@ -165,5 +170,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599338186796" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1599865347191">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599865347191" />
   </component>
 </project>

@@ -15,7 +15,7 @@ class Client (Ice.Application):
 
     def run (self, argv):
         self.shutdownOnInterrupt()
-        basePrx = self.communicator().stringToProxy("HolaMundo:default -h 25.96.226.157 -p 10000")
+        basePrx = self.communicator().stringToProxy("HolaMundo:default -p 10000")
         holaMundoPrx = Meteorologia.ConexionPrx.checkedCast(basePrx)
 
         try:
